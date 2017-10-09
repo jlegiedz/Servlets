@@ -1,0 +1,20 @@
+<?xml version = "1.0" encoding="UTF-8"?>
+
+<web-app xmlns:web="http://xmlns.jcp.org/xml/ns/javaee">
+    <display-name>servlets</display-name>
+    <session-config>
+        <session-timeout>120</session-timeout>
+    </session-config>
+    <!--drugi sposb na uzycie servletu- zamiast adnotacji-->
+    <servlet>
+        <servlet-name>HelloServlet</servlet-name>
+        <!-- klasa servletu-->
+        <servlet-class>servlets.HelloServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>HelloServlet</servlet-name>
+        <!--nie bedzie sie klocic z tym co mamy w klasie w adnotacji
+        - jeden servlet moze oblusgiwac wiele urlow-->
+        <url-pattern>/hello</url-pattern>
+    </servlet-mapping>
+</web-app>
