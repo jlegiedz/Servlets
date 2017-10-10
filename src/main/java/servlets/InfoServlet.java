@@ -7,7 +7,7 @@ import java.io.PrintWriter;
 import java.time.LocalDateTime;
 import java.util.*;
 
-@WebServlet("/info")
+@WebServlet(name = "InfoServlet",value = "/info")
 public class InfoServlet extends HttpServlet{
 
     @Override
@@ -57,13 +57,4 @@ public class InfoServlet extends HttpServlet{
 
     }
 
-    @Override
-    public void destroy() {
-        super.destroy();
-    }
-
-    @Override
-    public void init() throws ServletException {
-        super.init();
-    }
 }
