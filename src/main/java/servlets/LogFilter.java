@@ -7,21 +7,15 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- * Created by RENT on 2017-10-10.
- */
 //zapisanie kazdego loga do pliku
-    @WebFilter(servletNames = {"InfoServlet"})
+@WebFilter(servletNames = {"InfoServlet"})
 public class LogFilter implements Filter {
 
     private static final Logger LOGGER = Logger.getLogger(LogFilter.class.getName());
 
-
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
         LOGGER.log(Level.INFO, "Utworzenie instancji filtra");
-
-
     }
 
     @Override
@@ -34,7 +28,7 @@ public class LogFilter implements Filter {
         }
 
         //po tym jak filtr zwaliduje zadanie:
-        filterChain.doFilter(servletRequest,servletResponse);
+        filterChain.doFilter(servletRequest, servletResponse);
     }
 
     @Override

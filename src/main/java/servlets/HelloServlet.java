@@ -30,14 +30,13 @@ public class HelloServlet extends HttpServlet {
             System.out.println("Wpadlo zadanie na ten adres.");
         }
 
-        // PW sluzy do wyrzucenie tej wartosci ktora chcemy wyswietlic uzytkownikowi;
-        // mamy tylko dostep do obiekotw request i response, nei ma metod jak w Spring
+        // PW sluzy do wyrzucenia tej wartosci ktora chcemy wyswietlic uzytkownikowi;
+        // mamy tylko dostep do obiekotw request i response, nie ma metod jak w Spring
         // dlatego piszemy recznie wszystko
         PrintWriter out = resp.getWriter();
         //pobieramy drugi param konfiguracyjny
         String applicationName = getInitParameter("APPLICATION_NAME");
         out.println("HELLO SERVLET NA ADRESIE: <br/>" + applicationName);
-
         String adres = req.getRequestURI();
         out.println("<h1>Hello servlet pod adresem :</h1>" + adres);
     }

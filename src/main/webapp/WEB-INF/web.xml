@@ -20,7 +20,6 @@
             <param-value>Przykladowa aplikacja z servletami w Tomcacie</param-value>
         </init-param>
 
-
     </servlet>
     <servlet-mapping>
         <servlet-name>HelloServlet</servlet-name>
@@ -34,14 +33,9 @@
         <filter-class>servlets.LogFilter</filter-class>
         <!--np gdy chcemy logowac do osobnego pliku w -->
         <!--parametrze inicjalizacyjnym podajemy sciezke do pliku:-->
-
-
-
-
     </filter>
 
     <filter-mapping>
-
         <filter-name>LogFilter</filter-name>
         <url-pattern>/hello</url-pattern>
     </filter-mapping>

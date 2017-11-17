@@ -16,6 +16,8 @@ public class LoginServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         //przekazanie zadania do strony jsp
         req.getRequestDispatcher("/login.jsp").forward(req,resp);
+        //uparcie uzytkownik wpisuje strone /login
+        //jesli jest zalogowany i sesja nie wygasla to idz na maina- napisac tylko filtr nowy
     }
 
     @Override
@@ -28,6 +30,7 @@ public class LoginServlet extends HttpServlet {
         session.setAttribute("user", login);
         session.setAttribute("validTo", LocalDateTime.now().plusSeconds(90));
         resp.sendRedirect("main.jsp");
+
     }
 
 
